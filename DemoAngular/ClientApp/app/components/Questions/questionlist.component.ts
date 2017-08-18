@@ -21,6 +21,7 @@ export class QuestionListComponent implements OnInit {
         this.request(null, this.sortFilter);
     }
 
+    // lance une requête au service web API
     private request(filter: Filter, sortBy: string):void
     {
         // FDLM: 
@@ -57,7 +58,7 @@ export class QuestionListComponent implements OnInit {
 
     // formulaire de recherche
     onFilterRequested(filter: Filter): void {
-        this.questions = this._questionService.getQuestions(filter, this.sortFilter);
+        this.request(filter, this.sortFilter);
     }
 }
 

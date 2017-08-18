@@ -37,7 +37,7 @@ namespace MainModule.Repository
         #region Search
         public async Task<string> Search(SearchContext searchContext, string sort, string order)
         {
-            string pathUrl = $"/search?order={order}&sort={sort}";
+            string pathUrl = $"/search?&pagesize=10&order={order}&sort={sort}";
             if (searchContext != null)
             {
                 if (!string.IsNullOrWhiteSpace(searchContext.Text))

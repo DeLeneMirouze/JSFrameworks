@@ -37,14 +37,18 @@ namespace DemoAngular.Controllers
         /// <summary>
         /// Recherche parmi les questions
         /// </summary>
-        /// <param name="searchContext"></param>
         /// <param name="sort"></param>
         /// <param name="order"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("/api/search")]
-        public async Task<QuestionsViewModel> Get(SearchContext searchContext, string sort = "activity", string order = "desc")
+        public async Task<QuestionsViewModel> Get(string text, int? toDate, int? fromDate,string sort = "activity", string order = "desc")
         {
+            SearchContext searchContext = new SearchContext();
+            searchContext.Text = text;
+            searchContext.ToDate = toDate;
+            searchContext.FromDate = fromDate;
+
             QuestionsViewModel vm = await StackExchangeViewModelBuilder.Search(searchContext, sort, order);
             return vm;
         }
