@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAngular", "DemoAngular\DemoAngular.csproj", "{3C0DE8DE-672E-4D1B-911A-362D5441CDF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainModule", "MainModule\MainModule.csproj", "{DEDADDD6-3730-485A-A979-9B7AC88E770D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C0DE8DE-672E-4D1B-911A-362D5441CDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0DE8DE-672E-4D1B-911A-362D5441CDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0DE8DE-672E-4D1B-911A-362D5441CDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0DE8DE-672E-4D1B-911A-362D5441CDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDADDD6-3730-485A-A979-9B7AC88E770D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDADDD6-3730-485A-A979-9B7AC88E770D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDADDD6-3730-485A-A979-9B7AC88E770D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDADDD6-3730-485A-A979-9B7AC88E770D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
