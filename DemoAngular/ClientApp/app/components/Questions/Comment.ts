@@ -2,11 +2,11 @@
 
 export interface IComment
 {
-    id: number;
-    questionId: number;
-    creationDate: string;
+    comment_id: number;
+    post_id: number;
+    creation_date: string;
     body: string;
     owner: IOwner;
-    replyer: IOwner;
+    reply_to_user: IOwner;
 
 }

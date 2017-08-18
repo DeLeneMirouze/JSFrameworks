@@ -17,21 +17,21 @@ Trier par: <select [(ngModel)]="sortFilter">
 <div *ngIf="questions && questions.length">
     <div class="question" *ngFor="let question of sortedQuestions">
         <div class="quotas" *ngIf="detailedView">
-            <div class="badge">Votes: {{question.views}}</div>
-            <div class="badge">Rép: {{question.answers}}</div>
+            <div class="badge">Votes: {{question.view_count}}</div>
+            <div class="badge">Rép: {{question.answer_count}}</div>
         </div>
         <div class="items">
             <div>
-                <a class="title" [routerLink]="['/questions',question.id]">{{question.title | titlecase}}</a>
+                <a class="title" [routerLink]="['/questions',question.question_id]">{{question.title | titlecase}}</a>
             </div>
             <div class="tags" *ngIf="detailedView">
                 <div class="tag" *ngFor="let tag of question.tags">{{tag | uppercase}}</div>
             </div>
             <div class="user" *ngIf="detailedView">
-                <img class="gravatar" [src]='question.owner.avatarUrl' [title]="question.name" />
+                <img class="gravatar" [src]='question.owner.profile_image' [title]="question.name" />
                 <div class="other">
-                    <div class="date">{{question.creationDate | epochToDate:'dd/MM/yyyy'}}</div>
-                    <div class="name">{{question.owner.name}}</div>
+                    <div class="date">{{question.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
+                    <div class="name">{{question.owner.display_name}}</div>
                 </div>
             </div>
         </div>

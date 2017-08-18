@@ -1,5 +1,5 @@
 ﻿export interface IQuota
 {
-    max: number;
-    remaining: number;
+    quota_max: number;
+    quota_remaining: number;
 }

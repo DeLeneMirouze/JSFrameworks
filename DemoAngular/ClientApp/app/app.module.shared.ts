@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { AppComponent } from './components/app/app.component'
+import { HttpClientModule } from '@angular/common/http'
 import { NavMenuComponent } from './components/Shared/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/Shared/header/Header.component';
@@ -30,6 +31,7 @@ export const sharedConfig: NgModule = {
             { path: 'questions', component: QuestionListComponent },
             { path: 'questions/:id', canActivate: [QuestionGardService], component: QuestionDetail },
             { path: '**', redirectTo: 'home' }
-        ])
+        ]),
+        HttpClientModule
     ]
 };

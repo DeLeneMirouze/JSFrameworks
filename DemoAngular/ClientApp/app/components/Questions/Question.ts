@@ -2,15 +2,15 @@
 import { IComment } from "./Comment"
 
 export interface IQuestion {
-    id: number;
+    question_id: number;
     title: string;
-    isAnswered: boolean;
-    views: number;
-    answers: number;
-    creationDate: number;
-    lastActivity: number;
+    is_answered: boolean;
+    view_count: number;
+    answer_count: number;
+    creation_date: number;
+    last_activity_date: number;
     tags: string[]
 
     owner: IOwner;
-    //comments: IComment[];
+    comments?: IComment[] ;
 }

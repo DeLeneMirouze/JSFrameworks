@@ -2,8 +2,7 @@
 import { IQuestion } from './question';
 import { Filter } from "./Filter/filter";
 import { QuestionService } from "./question.service";
-//import { HttpHandler } from '@angular/common/http';
-//import { Observable } from "rxjs/Observable";
+import { IQuota } from "./Quota";
 
 @Component({
     templateUrl: './questionlist.component.html'
@@ -16,22 +15,24 @@ export class QuestionListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.questions = this._questionService.getQuestions(null, null);
-        this.sortedQuestions = this.questions;
+        this._questionService.getQuestionsHttp()
+            .subscribe(vm => {
+                this.questions = vm.questions;
+                this.quota = vm.quota;
 
-        //this._questionService.getQuestionsHttp()
-        //    .subscribe(questions => {
-        //        console.log('hhhhhhhhhh');
-        //        //this.questions = questions.questions;
-        //        //this.sortedQuestions = this.questions;
-        //    }
-        //       //, error => this.errorMessage=<any>error
-        //);
+                this.sortedQuestions = this.questions;
+                console.log(this.questions);
+            }
+               , error => this.errorMessage=<any>error
+        );
     }
 
     pageTitle: string = "Liste de questions";
     detailedView: boolean = true;
     errorMessage: string;
+    sortedQuestions: IQuestion[];
+    questions: IQuestion[];
+    quota: IQuota;
 
     _sortFilter: string;
     get sortFilter(): string {
@@ -41,9 +42,6 @@ export class QuestionListComponent implements OnInit {
         this._sortFilter = value;
         this.sortedQuestions = this._questionService.getQuestions(null, this.sortFilter);
     }
-
-    sortedQuestions: IQuestion[];
-    questions: IQuestion[];
 
     ToggleView(): void {
         this.detailedView = !this.detailedView;

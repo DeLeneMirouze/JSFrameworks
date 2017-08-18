@@ -3,58 +3,69 @@ import { Injectable } from "@angular/core";
 import { IQuestion } from "./Question";
 import { IQuota } from "./Quota";
 import { Filter } from "./Filter/filter";
-//import { HttpClient } from '@angular/common/http';
+import { IComment } from "./Comment"
+import { HttpClient } from '@angular/common/http';
 import { IQuestionViewModel } from "./QuestionsViewModel";
 import { Observable } from "rxjs/Observable";
+import { HttpErrorResponse } from "@angular/common/http";
+
+import 'rxjs/add/observable/throw';
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+
 
 @Injectable()
 export class QuestionService
 {
-    //constructor(private _http: HttpClient) {
+    constructor(private _http: HttpClient) {
        
-    //}
+    }
 
     questions: IQuestion[];
 
-    //getQuestionsHttp(): Observable<IQuestionViewModel>
-    //{
-    //    let questionUrl = "./api/questions";
-    //    let response: Observable<IQuestionViewModel> = this._http.get<IQuestionViewModel>(questionUrl);
-    //    return response;
-    //}
+    getQuestionsHttp(): Observable<IQuestionViewModel>
+    {
+        let questionUrl = "./api/questions";
+        let response = this._http.get<IQuestionViewModel>(questionUrl)
+            .do(data=>console.log('ALL: ' + JSON.stringify(data)))
+            .catch(this.handleError)
+            ;
+        return response;
+    }
 
-    getQuestions(filter: Filter, sortBy: string): IQuestion[] // Observable<IQuestionViewModel>
+    getQuestions(filter: Filter, sortBy: string): IQuestion[] 
     {
         this.questions = [
             {
-                "id": 1,
+                "question_id": 1,
                 "title": "Comment faire un commentaire en C#?",
-                "views": 150,
-                "answers": 9,
-                "creationDate": 1502804000,
+                "view_count": 150,
+                "answer_count": 9,
+                "creation_date": 1502804000,
                 "tags": ["C#", "Azure"],
-                "isAnswered": true,
-                "lastActivity": 1502804000,
+                "is_answered": true,
+                "last_activity_date": 1502804000,
                 "owner": {
-                    "id": 3,
-                    "avatarUrl": "https://i.stack.imgur.com/tDPsf.jpg",
-                    "name": "Super Frédo",
+                    "user_id": 3,
+                    "profile_image": "https://i.stack.imgur.com/tDPsf.jpg",
+                    "display_name": "Super Frédo",
                     "reputation": 7
                 }
             },
             {
-                "id": 2,
+                "question_id": 2,
                 "title": "Comment fonctionne Azure AD?",
-                "views": 5,
-                "answers": 16,
-                "creationDate": 1502804000,
+                "view_count": 5,
+                "answer_count": 16,
+                "creation_date": 1502804000,
                 "tags": ["Azure"],
-                "isAnswered": false,
-                "lastActivity": 1502804000,
+                "is_answered": false,
+                "last_activity_date": 1502804000,
                 "owner": {
-                    "id": 4,
-                    "avatarUrl": "https://i.stack.imgur.com/tDPsf.jpg",
-                    "name": "Hyper Frédo",
+                    "user_id": 4,
+                    "profile_image": "https://i.stack.imgur.com/tDPsf.jpg",
+                    "display_name": "Hyper Frédo",
                     "reputation": 5
                 }
             }
@@ -86,26 +97,26 @@ export class QuestionService
             let comparison: number = 0;
 
             if (sortBy == "views") {
-                if (question1.views > question2.views) {
+                if (question1.view_count > question2.view_count) {
                     comparison = -1;
                 }
-                else if (question1.views < question2.views) {
+                else if (question1.view_count < question2.view_count) {
                     comparison = 1;
                 }
             }
             else if (sortBy == "answers") {
-                if (question1.answers > question2.answers) {
+                if (question1.answer_count > question2.answer_count) {
                     comparison = -1;
                 }
-                else if (question1.answers < question2.answers) {
+                else if (question1.answer_count < question2.answer_count) {
                     comparison = 1;
                 }
             }
             else if (sortBy == "date") {
-                if (question1.creationDate > question2.creationDate) {
+                if (question1.creation_date > question2.creation_date) {
                     comparison = -1;
                 }
-                else if (question1.creationDate < question2.creationDate) {
+                else if (question1.creation_date < question2.creation_date) {
                     comparison = 1;
                 }
             }
@@ -115,5 +126,10 @@ export class QuestionService
 
         return questions;
     };
-    
+
+    private handleError(err: HttpErrorResponse)
+    {
+        console.log(err.message);
+        return Observable.throw(<any>err.message);
+    }
 }

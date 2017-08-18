@@ -1,7 +1,7 @@
 ﻿export interface IOwner
 {
-    id: number;
-    avatarUrl: string;
-    name: string;
+    user_id: number;
+    profile_image: string;
+    display_name: string;
     reputation: number;
 }
