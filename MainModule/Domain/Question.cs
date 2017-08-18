@@ -26,6 +26,7 @@ namespace MainModule.Domain
         public Owner Owner { get; set; }
         public int Score { get; set; }
 
+        public int? Accepted_answer_id { get; set; }
         public string Title { get; set; }
 
         [JsonProperty(PropertyName = "is_answered")]

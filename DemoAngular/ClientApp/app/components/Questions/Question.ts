@@ -11,6 +11,7 @@ export interface IQuestion {
     last_activity_date: number;
     tags: string[]
     score?: number;
+    accepted_answer_id?: boolean;
 
     owner: IOwner;
     comments?: IComment[] ;

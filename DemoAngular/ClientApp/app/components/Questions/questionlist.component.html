@@ -37,8 +37,12 @@ Trier par: <select [(ngModel)]="sortFilter">
             </div>
         </div>
     </div>
-   
 </div>
+
+<div *ngIf="quotas && quotas.has_more" class="alert alert-warning">
+    Il y a d'autres résultats, mais je ne gère pas la pagination
+</div>
+
 <div *ngIf="questions && questions.length == 0" class="alert alert-success">
     Désolé, mais aucune question ne correspond à vos critères
 </div>

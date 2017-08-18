@@ -31,7 +31,8 @@ export class QuestionListComponent implements OnInit {
         this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;
-                this.quota = vm.quota;
+                this.quotas = vm.quota;
+                console.log(this.quotas);
             }
             , error => this.errorMessage = <any>error
             );
@@ -41,7 +42,7 @@ export class QuestionListComponent implements OnInit {
     detailedView: boolean = true;
     errorMessage: string;
     questions: IQuestion[];
-    quota: IQuota;
+    quotas: IQuota;
 
     _sortFilter: string;
     get sortFilter(): string {
@@ -49,15 +50,18 @@ export class QuestionListComponent implements OnInit {
     }
     set sortFilter(value:string) {
         this._sortFilter = value;
-        this.request(null, this.sortFilter);
+        this.request(this.filter, this.sortFilter);
     }
 
     ToggleView(): void {
         this.detailedView = !this.detailedView;
     }
 
-    // formulaire de recherche
+    // Recherche
+    private filter: Filter; // pour garder une trace du dernier filtre lorsque l'on fait un tri'
+
     onFilterRequested(filter: Filter): void {
+        this.filter = filter;
         this.request(filter, this.sortFilter);
     }
 }

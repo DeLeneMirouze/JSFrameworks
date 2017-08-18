@@ -28,17 +28,11 @@ export class QuestionService
     getQuestionsHttp(filter: Filter, sortBy: string): Observable<IQuestionViewModel>
     {
         let questionUrl = "./api/questions?";
+        questionUrl += "sort=" + (sortBy ? sortBy : "");
         if (filter) {
-            questionUrl = "./api/search?";
-
-            questionUrl += "sort=" + (sortBy ? sortBy : "");
-
             questionUrl += "&text=" + filter.title;
             //questionUrl += "&toDate=" + filter.toDate;
             //questionUrl += "&fromDate=" + filter.fromDate;
-        }
-        else {
-            questionUrl += "sort=" + (sortBy ? sortBy : "");
         }
 
         let response = this._http.get<IQuestionViewModel>(questionUrl)
