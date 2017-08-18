@@ -5,9 +5,9 @@
 <h1 class="pageTitle">{{pageTitle}}</h1>
 Trier par: <select [(ngModel)]="sortFilter">
     <option></option>
-    <option value="date">Date création</option>
-    <option value="answers">Nb réponses</option>
-    <option value="views">Nb votes</option>
+    <option value="creation">Date création</option>
+    <option value="activity">Activité</option>
+    <option value="votes">Nb votes</option>
 </select>
 
 <input type="checkbox" (change)="ToggleView()" /> Vue simplifiée

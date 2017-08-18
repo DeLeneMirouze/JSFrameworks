@@ -97,7 +97,7 @@ export class QuestionService
 
             let comparison: number = 0;
 
-            if (sortBy == "views") {
+            if (sortBy == "votes") {
                 if (question1.view_count > question2.view_count) {
                     comparison = -1;
                 }
@@ -105,15 +105,15 @@ export class QuestionService
                     comparison = 1;
                 }
             }
-            else if (sortBy == "answers") {
-                if (question1.answer_count > question2.answer_count) {
+            else if (sortBy == "activity") {
+                if (question1.last_activity_date > question2.last_activity_date) {
                     comparison = -1;
                 }
-                else if (question1.answer_count < question2.answer_count) {
+                else if (question1.last_activity_date < question2.last_activity_date) {
                     comparison = 1;
                 }
             }
-            else if (sortBy == "date") {
+            else if (sortBy == "creation") {
                 if (question1.creation_date > question2.creation_date) {
                     comparison = -1;
                 }
