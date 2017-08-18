@@ -55,6 +55,7 @@ export class QuestionListComponent implements OnInit {
         this.detailedView = !this.detailedView;
     }
 
+    // formulaire de recherche
     onFilterRequested(filter: Filter): void {
         this.questions = this._questionService.getQuestions(filter, this.sortFilter);
     }

@@ -5,20 +5,21 @@
 <h1 class="pageTitle">{{pageTitle}}</h1>
 Trier par: <select [(ngModel)]="sortFilter">
     <option></option>
-    <option value="creation">Date création</option>
+    <option value="hot">Hot</option>
     <option value="activity">Activité</option>
-    <option value="votes">Nb votes</option>
+    <option value="votes">Votes</option>
 </select>
 
 <input type="checkbox" (change)="ToggleView()" /> Vue simplifiée
 
-<div>{{errorMessage}}</div>
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
 
 <div *ngIf="questions && questions.length">
     <div class="question" *ngFor="let question of questions">
         <div class="quotas" *ngIf="detailedView">
-            <div class="badge">Votes: {{question.view_count}}</div>
             <div class="badge">Rép: {{question.answer_count}}</div>
+            <div *ngIf="question.score" class="badge">Votes: {{question.score}}</div>
+            <div class="badge">Vu: {{question.view_count}}</div>
         </div>
         <div class="items">
             <div>
@@ -31,13 +32,13 @@ Trier par: <select [(ngModel)]="sortFilter">
                 <img class="gravatar" [src]='question.owner.profile_image' [title]="question.name" />
                 <div class="other">
                     <div class="date">{{question.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
-                    <div class="name">{{question.owner.display_name}}</div>
+                    <div class="name">{{question.owner.display_name}}</div> <div class="badge">{{question.owner.reputation}}</div>
                 </div>
             </div>
         </div>
     </div>
    
 </div>
-<div *ngIf="!sortedQuestions || !sortedQuestions.length" class="alert" alert-warning>
+<div *ngIf="questions && questions.length == 0" class="alert" alert-warning>
     Désolé, mais aucune question ne correspond à vos critères
 </div>

@@ -24,6 +24,7 @@ namespace MainModule.Domain
         public string[] Tags { get; set; }
 
         public Owner Owner { get; set; }
+        public int Score { get; set; }
 
         public string Title { get; set; }
 

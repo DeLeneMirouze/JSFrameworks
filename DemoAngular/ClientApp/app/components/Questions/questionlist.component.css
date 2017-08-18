@@ -29,7 +29,7 @@
     margin-right:5px;
 }
 
-.badge {
+.quotas > .badge {
     color: white;
     background: forestgreen;
     display: block;

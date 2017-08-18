@@ -28,6 +28,10 @@ export class QuestionService
     getQuestionsHttp(filter: Filter, sortBy: string): Observable<IQuestionViewModel>
     {
         let questionUrl = "./api/questions";
+        if (sortBy)
+        {
+            questionUrl += "?sort=" + sortBy;
+        }
         let response = this._http.get<IQuestionViewModel>(questionUrl)
             .share()
             .catch(this.handleError)

@@ -10,6 +10,7 @@ export interface IQuestion {
     creation_date: number;
     last_activity_date: number;
     tags: string[]
+    score?: number;
 
     owner: IOwner;
     comments?: IComment[] ;
