@@ -13,6 +13,7 @@ import 'rxjs/add/observable/throw';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/share';
 
 
 @Injectable()
@@ -28,7 +29,7 @@ export class QuestionService
     {
         let questionUrl = "./api/questions";
         let response = this._http.get<IQuestionViewModel>(questionUrl)
-            //.do(data=>console.log('ALL: ' + JSON.stringify(data)))
+            .share()
             .catch(this.handleError)
             ;
 

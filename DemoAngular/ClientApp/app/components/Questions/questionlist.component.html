@@ -15,7 +15,7 @@ Trier par: <select [(ngModel)]="sortFilter">
 <div>{{errorMessage}}</div>
 
 <div *ngIf="questions && questions.length">
-    <div class="question" *ngFor="let question of sortedQuestions">
+    <div class="question" *ngFor="let question of questions">
         <div class="quotas" *ngIf="detailedView">
             <div class="badge">Votes: {{question.view_count}}</div>
             <div class="badge">Rép: {{question.answer_count}}</div>

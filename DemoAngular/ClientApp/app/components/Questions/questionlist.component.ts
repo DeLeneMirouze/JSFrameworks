@@ -1,15 +1,16 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { IQuestion } from './question';
 import { Filter } from "./Filter/filter";
 import { QuestionService } from "./question.service";
 import { IQuota } from "./Quota";
+
 
 @Component({
     templateUrl: './questionlist.component.html'
     , styleUrls: ['./questionlist.component.css']
 })
 export class QuestionListComponent implements OnInit {
-    constructor(private _questionService :QuestionService)
+    constructor(private _questionService: QuestionService)
     {
 
     }
@@ -22,14 +23,14 @@ export class QuestionListComponent implements OnInit {
 
     private request(filter: Filter, sortBy: string):void
     {
+        // FDLM: 
+        // https://netbasal.com/angular-stop-using-observable-when-you-should-use-a-promise-8da0788a8d2
+        // https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
+
         this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;
                 this.quota = vm.quota;
-
-                this.sortedQuestions = this.questions;
-
-                this.sortFilter = null;
             }
             , error => this.errorMessage = <any>error
             );
@@ -38,7 +39,6 @@ export class QuestionListComponent implements OnInit {
     pageTitle: string = "Liste de questions";
     detailedView: boolean = true;
     errorMessage: string;
-    sortedQuestions: IQuestion[];
     questions: IQuestion[];
     quota: IQuota;
 
@@ -56,7 +56,7 @@ export class QuestionListComponent implements OnInit {
     }
 
     onFilterRequested(filter: Filter): void {
-        this.sortedQuestions = this._questionService.getQuestions(filter, this.sortFilter);
+        this.questions = this._questionService.getQuestions(filter, this.sortFilter);
     }
 }
 
