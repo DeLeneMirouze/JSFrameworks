@@ -28,7 +28,7 @@ namespace MainModule.Repository
         #region AllQuestions
         public async Task<string> AllQuestions(string sort = "activity", string order="desc")
         {
-            string pathUrl = $"/questions?order={order}&sort={sort}";
+            string pathUrl = $"/questions?order={order}&sort={sort}&pagesize=10";
             string json = await RequestApi(pathUrl);
             return json;
         }

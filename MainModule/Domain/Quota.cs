@@ -9,5 +9,6 @@ namespace MainModule.Domain
 
         [JsonProperty(PropertyName = "quota_remaining")]
         public int Remaining { get; set; }
+        public bool has_more { get; set; }
     }
 }

@@ -24,13 +24,14 @@ export class QuestionService
 
     questions: IQuestion[];
 
-    getQuestionsHttp(): Observable<IQuestionViewModel>
+    getQuestionsHttp(filter: Filter, sortBy: string): Observable<IQuestionViewModel>
     {
         let questionUrl = "./api/questions";
         let response = this._http.get<IQuestionViewModel>(questionUrl)
-            .do(data=>console.log('ALL: ' + JSON.stringify(data)))
+            //.do(data=>console.log('ALL: ' + JSON.stringify(data)))
             .catch(this.handleError)
             ;
+
         return response;
     }
 

@@ -15,16 +15,24 @@ export class QuestionListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._questionService.getQuestionsHttp()
+        this.sortFilter = null;
+
+        this.request(null, this.sortFilter);
+    }
+
+    private request(filter: Filter, sortBy: string):void
+    {
+        this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;
                 this.quota = vm.quota;
 
                 this.sortedQuestions = this.questions;
-                console.log(this.questions);
+
+                this.sortFilter = null;
             }
-               , error => this.errorMessage=<any>error
-        );
+            , error => this.errorMessage = <any>error
+            );
     }
 
     pageTitle: string = "Liste de questions";
@@ -40,7 +48,7 @@ export class QuestionListComponent implements OnInit {
     }
     set sortFilter(value:string) {
         this._sortFilter = value;
-        this.sortedQuestions = this._questionService.getQuestions(null, this.sortFilter);
+        this.request(null, this.sortFilter);
     }
 
     ToggleView(): void {
