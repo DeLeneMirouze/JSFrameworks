@@ -1,10 +1,10 @@
-﻿import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+﻿import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { IQuestion } from './question';
 import { Filter } from "./Filter/filter";
 import { QuestionService } from "./question.service";
 import { IQuota } from "./Quota";
 
-
+// FDLM pas de selector car le composant ne sera pas inclus dans un autre composant, il sera juste partie d'une route
 @Component({
     templateUrl: './questionlist.component.html'
     , styleUrls: ['./questionlist.component.css']
@@ -25,14 +25,13 @@ export class QuestionListComponent implements OnInit {
     private request(filter: Filter, sortBy: string):void
     {
         // FDLM: 
-        // https://netbasal.com/angular-stop-using-observable-when-you-should-use-a-promise-8da0788a8d2
         // https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 
         this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;
-                this.quotas = vm.quota;
-                console.log(this.quotas);
+
+                this.quotas= vm.quota;
             }
             , error => this.errorMessage = <any>error
             );

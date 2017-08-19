@@ -1,8 +1,7 @@
-﻿<header></header>
+﻿<header [quotas]="quotas"></header>
 
 <filter (filterRequested)="onFilterRequested($event)"></filter>
 
-<h1 class="pageTitle">{{pageTitle}}</h1>
 Trier par: <select [(ngModel)]="sortFilter">
     <option></option>
     <option value="hot">Hot</option>
@@ -13,6 +12,8 @@ Trier par: <select [(ngModel)]="sortFilter">
 <input type="checkbox" (change)="ToggleView()" /> Vue simplifiée
 
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
+<h1 class="pageTitle">{{pageTitle}}</h1>
 
 <div *ngIf="questions && questions.length">
     <div class="question" *ngFor="let question of questions">
@@ -39,8 +40,8 @@ Trier par: <select [(ngModel)]="sortFilter">
     </div>
 </div>
 
-<div *ngIf="quotas && quotas.has_more" class="alert alert-warning">
-    Il y a d'autres résultats, mais je ne gère pas la pagination
+<div class="alert alert-warning" *ngIf="questions && questions.length">
+    Il y a peut-être d'autres résultats, mais je ne gère pas la pagination
 </div>
 
 <div *ngIf="questions && questions.length == 0" class="alert alert-success">

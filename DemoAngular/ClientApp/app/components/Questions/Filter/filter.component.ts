@@ -6,7 +6,9 @@ import { Filter } from "./filter";
     templateUrl: './filter.component.html'
 })
 export class FilterListComponent {
-    @Input() filter: Filter= new Filter();
+    @Input() filter: Filter = new Filter();
+
+    // FDLM https://www.sitepoint.com/angular-2-components-inputs-outputs/
     @Output() filterRequested: EventEmitter<Filter> = new EventEmitter<Filter>();
 
     search(): void {

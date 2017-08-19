@@ -1,14 +1,17 @@
 ﻿ .red {
     color: red;
     font-size: 22px;
+    margin-bottom:18px;
 }
 
 .yellow {
     color: darkorange;
     font-size: 22px;
+    margin-bottom: 18px;
 }
 
 .green {
     color: green;
     font-size: 22px;
+    margin-bottom: 18px;
 }

@@ -1,11 +1,9 @@
-﻿<div class="glyphicon glyphicon-cloud yellow">
-    5502/10000
+﻿<div class="glyphicon glyphicon-cloud yellow" *ngIf="selector==2">
+    {{quotas.quota_remaining}}/{{quotas.quota_max}}
 </div>
-
-<div class="glyphicon glyphicon-cog green">
-    153/10000
+<div class="glyphicon glyphicon-cog green" *ngIf="selector==1">
+    {{quotas.quota_remaining}}/{{quotas.quota_max}}
 </div>
-
-<div class="glyphicon glyphicon-tint red">
-    8900/10000
+<div class="glyphicon glyphicon-tint red" *ngIf="selector==3">
+    {{quotas.quota_remaining}}/{{quotas.quota_max}}
 </div>
