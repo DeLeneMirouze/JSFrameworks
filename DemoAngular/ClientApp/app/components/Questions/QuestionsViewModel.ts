@@ -1,5 +1,5 @@
-﻿import { IQuota } from './Quota';
-import { IQuestion } from "./Question";
+﻿import { IQuota } from '../Domain/Quota';
+import { IQuestion } from "../Domain/Question";
 
 export interface IQuestionViewModel {
     quota: IQuota;

@@ -1,5 +1,5 @@
 ﻿import { Component, Input } from '@angular/core';
-import { IQuota } from "../../Questions/Quota";
+import { IQuota } from "../../Domain/Quota";
 
 @Component({
     selector: 'header',

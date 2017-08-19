@@ -1,8 +1,8 @@
 ﻿
 import { Component, OnInit } from "@angular/core";
-import { IQuestion } from "./Question";
-import { IDetailedQuestion } from "./DetailedQuestion";
+import { IQuestion } from "../Domain/Question";
 import { ActivatedRoute, Router } from "@angular/router";
+import { IDetailedQuestion } from "../Domain/DetailedQuestion";
 
 // FDLM pas de selector car le composant ne sera pas inclus dans un autre composant, il sera juste partie d'une route
 @Component(

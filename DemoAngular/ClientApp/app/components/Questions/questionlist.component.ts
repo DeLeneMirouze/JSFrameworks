@@ -1,8 +1,8 @@
 ﻿import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
-import { IQuestion } from './question';
+import { IQuestion } from "../Domain/Question";
 import { Filter } from "./Filter/filter";
 import { QuestionService } from "./question.service";
-import { IQuota } from "./Quota";
+import { IQuota } from "../Domain/Quota";
 
 // FDLM pas de selector car le composant ne sera pas inclus dans un autre composant, il sera juste partie d'une route
 @Component({

@@ -1,9 +1,8 @@
 ﻿
 import { Injectable } from "@angular/core";
-import { IQuestion } from "./Question";
-import { IQuota } from "./Quota";
+import { IQuota } from "../Domain/Quota";
 import { Filter } from "./Filter/filter";
-import { IComment } from "./Comment"
+import { IComment } from "../Domain/Comment"
 import { HttpClient } from '@angular/common/http';
 import { IQuestionViewModel } from "./QuestionsViewModel";
 import { Observable } from "rxjs/Observable";
@@ -14,6 +13,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/share';
+import { IQuestion } from "../Domain/Question";
 
 
 @Injectable()
@@ -31,8 +31,6 @@ export class QuestionService
         questionUrl += "sort=" + (sortBy ? sortBy : "");
         if (filter) {
             questionUrl += "&text=" + filter.title;
-            //questionUrl += "&toDate=" + filter.toDate;
-            //questionUrl += "&fromDate=" + filter.fromDate;
         }
 
         let response = this._http.get<IQuestionViewModel>(questionUrl)
