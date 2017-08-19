@@ -14,6 +14,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/share';
 import { IQuestion } from "../Domain/Question";
+import { IDetailViewModel } from "../Details/DetailViewModel";
 
 
 @Injectable()
@@ -27,13 +28,24 @@ export class QuestionService
 
     getQuestionsHttp(filter: Filter, sortBy: string): Observable<IQuestionViewModel>
     {
-        let questionUrl = "./api/questions?";
-        questionUrl += "sort=" + (sortBy ? sortBy : "");
+        let requestUrl = "./api/questions?";
+        requestUrl += "sort=" + (sortBy ? sortBy : "");
         if (filter) {
-            questionUrl += "&text=" + filter.title;
+            requestUrl += "&text=" + filter.title;
         }
 
-        let response = this._http.get<IQuestionViewModel>(questionUrl)
+        let response = this._http.get<IQuestionViewModel>(requestUrl)
+            .share()
+            .catch(this.handleError)
+            ;
+
+        return response;
+    }
+
+    getQuestionById(id: number): Observable<IDetailViewModel>
+    {
+        let requestUrl = "./api/questions/" + id;
+        let response = this._http.get<IDetailViewModel>(requestUrl)
             .share()
             .catch(this.handleError)
             ;

@@ -5,6 +5,6 @@ import { IDetailedQuestion } from "../Domain/DetailedQuestion";
 
 export interface IDetailViewModel {
     quota: IQuota;
-    detailedQuestion: IDetailedQuestion;
-    questions: IAnswer[];
+    detailedQuestion?: IDetailedQuestion;
+    questions?: IAnswer[];
 }

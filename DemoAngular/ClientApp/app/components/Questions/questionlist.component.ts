@@ -57,7 +57,7 @@ export class QuestionListComponent implements OnInit {
     }
 
     // Recherche
-    private filter: Filter; // pour garder une trace du dernier filtre lorsque l'on fait un tri'
+    private filter: Filter; // pour garder une trace du dernier filtre lorsque l'on fait un tri
 
     onFilterRequested(filter: Filter): void {
         this.filter = filter;
