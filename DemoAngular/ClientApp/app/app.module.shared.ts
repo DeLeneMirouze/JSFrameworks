@@ -11,6 +11,7 @@ import { EpochToDatePipe } from './components/Shared/Pipes/EpochToDate.pipe';
 import { EscapeHtmlPipe } from './components/Shared/Pipes/keephtml.pipe';
 import { QuestionDetail } from './components/Details/questiondetail.component';
 import { QuestionGardService } from './components/Shared/navmenu/questiongard.service';
+import { Comments } from './components/details/comments.component';
 
 export const sharedConfig: NgModule = {
     bootstrap: [AppComponent],
@@ -24,7 +25,8 @@ export const sharedConfig: NgModule = {
         FilterListComponent,
         EpochToDatePipe,
         QuestionDetail,
-        EscapeHtmlPipe
+        EscapeHtmlPipe,
+        Comments
     ],
     imports: [
         RouterModule.forRoot([

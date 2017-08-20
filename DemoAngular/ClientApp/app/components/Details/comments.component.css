@@ -1,0 +1,16 @@
+﻿
+.other > .name {
+    display: inline-block;
+}
+
+.gravatar {
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.user {
+    margin-top: 10px;
+}

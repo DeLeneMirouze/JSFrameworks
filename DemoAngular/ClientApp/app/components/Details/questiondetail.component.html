@@ -1,4 +1,4 @@
-﻿<header [quotas]="quotas"></header>
+﻿<header *ngIf="question" [quotas]="quotas"></header>
 
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
 
@@ -27,3 +27,5 @@
         </div>
     </div>
 </div>
+<hr/>
+<comments [comments]="question.comments"></comments>
