@@ -14,5 +14,6 @@ export interface IQuestion {
     accepted_answer_id?: boolean;
 
     owner: IOwner;
-    comments?: IComment[] ;
+    comments?: IComment[];
+    body?: string;
 }

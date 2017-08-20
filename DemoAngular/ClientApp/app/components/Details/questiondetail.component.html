@@ -1,9 +1,29 @@
 ﻿<header [quotas]="quotas"></header>
 
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
 
 <button (click)="callBack()"><< Retour</button>
-   Détails
-<div *ngIf="question">
+<div *ngIf="question" class="question">
+
     <h2>{{question.title}}</h2>
- 
+
+    <div class="quotas">
+        <div class="badge">Rép: {{question.answer_count}}</div>
+        <div *ngIf="question.score" class="badge">Votes: {{question.score}}</div>
+        <div class="badge">Vu: {{question.view_count}}</div>
+    </div>
+    <div class="items">
+        <div [innerHTML]="question.body | keepHtml"></div>
+        <div class="tags">
+            <div class="tag" *ngFor="let tag of question.tags">{{tag | uppercase}}</div>
+        </div>
+        <div class="user">
+            <img class="gravatar" [src]='question.owner.profile_image' [title]="question.name" />
+            <div class="other">
+                <div class="date">{{question.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
+                <div class="name">{{question.owner.display_name}}</div>
+                <div class="badge">{{question.owner.reputation}}</div>
+            </div>
+        </div>
+    </div>
 </div>

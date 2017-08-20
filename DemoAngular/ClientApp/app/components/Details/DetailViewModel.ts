@@ -1,10 +1,10 @@
 ﻿
 import { IQuota } from "../Domain/Quota";
 import { IAnswer } from "../Domain/Answer";
-import { IDetailedQuestion } from "../Domain/DetailedQuestion";
+import { IQuestion } from "../Domain/Question";
 
 export interface IDetailViewModel {
     quota: IQuota;
-    detailedQuestion?: IDetailedQuestion;
-    questions?: IAnswer[];
+    question: IQuestion;
+    answers?: IAnswer[];
 }

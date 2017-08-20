@@ -1,1 +1,62 @@
-﻿
+﻿.question {
+    background-color: whitesmoke;
+    margin-top: 10px;
+}
+
+.tags > .tag {
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px;
+    margin-right: 2px;
+}
+
+.question .title {
+    font-weight: bold;
+    color: chocolate;
+}
+
+.other > .name {
+    display: inline-block;
+}
+
+.gravatar {
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.quotas > .badge {
+    color: white;
+    background: forestgreen;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.pageTitle {
+    color: blue;
+}
+
+.quotas {
+    float: left;
+    margin-right: 10px;
+}
+
+.items {
+    float: none;
+    display: inline-block;
+}
+
+.date {
+    display: block;
+}
+
+.other {
+}
+
+.user {
+    margin-top: 10px;
+}

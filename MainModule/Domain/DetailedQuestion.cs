@@ -6,6 +6,5 @@ namespace MainModule.Domain
     public sealed class DetailedQuestion : Question
     {
         public string Body { get; set; }
-        public int Score { get; set; }
     }
 }

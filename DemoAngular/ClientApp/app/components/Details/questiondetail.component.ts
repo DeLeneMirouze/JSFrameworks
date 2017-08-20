@@ -2,7 +2,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IQuestion } from "../Domain/Question";
 import { ActivatedRoute, Router } from "@angular/router";
-import { IDetailedQuestion } from "../Domain/DetailedQuestion";
 import { IQuota } from "../Domain/Quota";
 import { QuestionService } from "../Questions/question.service";
 import { IAnswer } from "../Domain/Answer";
@@ -25,7 +24,7 @@ export class QuestionDetail implements OnInit {
         this.request(id);
     }
 
-    detailedQuestion: IDetailedQuestion;
+    question: IQuestion;
     quotas: IQuota;
     answers: IAnswer[];
     errorMessage: string;
@@ -37,8 +36,8 @@ export class QuestionDetail implements OnInit {
 
         this._questionService.getQuestionById(id)
             .subscribe(vm => {
-                this.detailedQuestion = vm.detailedQuestion;
-                this.answers = vm.questions;
+                this.question = vm.question;
+                this.answers = vm.answers;
                 this.quotas = vm.quota;
             }
             , error => this.errorMessage = <any>error

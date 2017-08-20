@@ -33,7 +33,8 @@ Trier par: <select [(ngModel)]="sortFilter">
                 <img class="gravatar" [src]='question.owner.profile_image' [title]="question.name" />
                 <div class="other">
                     <div class="date">{{question.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
-                    <div class="name">{{question.owner.display_name}}</div> <div class="badge">{{question.owner.reputation}}</div>
+                    <div class="name">{{question.owner.display_name}}</div> 
+                    <div class="badge">{{question.owner.reputation}}</div>
                 </div>
             </div>
         </div>

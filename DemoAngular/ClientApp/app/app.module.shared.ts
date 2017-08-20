@@ -7,7 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/Shared/header/Header.component';
 import { QuestionListComponent } from './components/Questions/questionlist.component';
 import { FilterListComponent } from './components/Questions/filter/filter.component';
-import { EpochToDatePipe } from './components/Shared/Pipes/EpochToDatePipe';
+import { EpochToDatePipe } from './components/Shared/Pipes/EpochToDate.pipe';
+import { EscapeHtmlPipe } from './components/Shared/Pipes/keephtml.pipe';
 import { QuestionDetail } from './components/Details/questiondetail.component';
 import { QuestionGardService } from './components/Shared/navmenu/questiongard.service';
 
@@ -22,7 +23,8 @@ export const sharedConfig: NgModule = {
         QuestionListComponent,
         FilterListComponent,
         EpochToDatePipe,
-        QuestionDetail
+        QuestionDetail,
+        EscapeHtmlPipe
     ],
     imports: [
         RouterModule.forRoot([

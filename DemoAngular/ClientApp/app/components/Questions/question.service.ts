@@ -46,6 +46,7 @@ export class QuestionService
     {
         let requestUrl = "./api/questions/" + id;
         let response = this._http.get<IDetailViewModel>(requestUrl)
+            //.do(data=>console.log(JSON.stringify(data)))
             .share()
             .catch(this.handleError)
             ;
