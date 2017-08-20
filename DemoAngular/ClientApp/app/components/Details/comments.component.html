@@ -1,6 +1,5 @@
-﻿
-<div *ngIf="comments">  
-    <div *ngFor="let comment of comments">
+﻿<div *ngIf="comments && comments.length>0;else elseBlock">
+    <div *ngFor="let comment of comments" class="comments">
         <div [innerHTML]="comment.body | keepHtml"></div>
 
         <div class="user">
@@ -15,3 +14,8 @@
         <hr />
     </div>
 </div>
+
+<ng-template #elseBlock>
+    <p class="alert alert-info">Pas de commentaires</p>
+</ng-template>
+

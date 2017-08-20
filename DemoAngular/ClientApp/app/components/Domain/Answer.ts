@@ -11,5 +11,5 @@ export interface IAnswer
     creation_date: number;
     score: number;
 
-    comments: IComment[];
+    comments?: IComment[];
 }

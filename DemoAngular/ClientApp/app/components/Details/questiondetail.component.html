@@ -26,6 +26,13 @@
             </div>
         </div>
     </div>
+
+    <hr />
+        <comments  [comments]="question.comments"></comments>
+    <hr />
+    <div *ngIf="answers">
+      <h2>{{answers.length}} réponses</h2>
+        <hr/>
+        <answers [answers]="answers"></answers>
+    </div>
 </div>
-<hr/>
-<comments [comments]="question.comments"></comments>

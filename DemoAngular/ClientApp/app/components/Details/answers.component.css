@@ -1,0 +1,30 @@
+﻿
+.other > .name {
+    display: inline-block;
+}
+
+.gravatar {
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.user {
+    margin-top: 10px;
+}
+
+.accepted {
+    color: green;
+    font-size: 32px;
+    margin-right:2px;
+    display:block;
+}
+
+.quotas > .badge {
+    color: white;
+    background: forestgreen;
+    text-align: left;
+    margin-top: 5px;
+}
