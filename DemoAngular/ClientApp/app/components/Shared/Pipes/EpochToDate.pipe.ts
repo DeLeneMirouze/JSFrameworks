@@ -9,6 +9,8 @@ export class EpochToDatePipe extends DatePipe implements PipeTransform {
     transform(value: any, args: string): string | null {
         // Angular gère les timestamps en secondes et pas en ms
             value = value * 1000;
-            return super.transform(value, args);
-        }
+            return super.transform(value, this.formatDate);
+    }
+
+    private formatDate = 'dd/MM/yyyy';
 }

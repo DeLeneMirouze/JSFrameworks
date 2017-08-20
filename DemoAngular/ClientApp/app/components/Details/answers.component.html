@@ -2,14 +2,14 @@
     <div *ngFor="let answer of answers">
         <div *ngIf="answer.is_accepted" class="glyphicon glyphicon-ok accepted"></div>
         <div class="quotas">
-            <div *ngIf="answer.score" class="badge">Votes: {{answer.score}}</div>
+            <div class="badge">Votes: {{answer.score}}</div>
         </div>
         <div [innerHTML]="answer.body | keepHtml"></div>
 
         <div class="user">
             <img class="gravatar" [src]='answer.owner.profile_image' [title]="answer.name" />
             <div class="other">
-                <div class="date">{{answer.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
+                <div class="date">{{answer.creation_date | epochToDate}}</div>
                 <div class="name">{{answer.owner.display_name}}</div>
                 <div class="badge">{{answer.owner.reputation}}</div>
             </div>

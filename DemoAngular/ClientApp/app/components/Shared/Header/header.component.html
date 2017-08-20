@@ -1,9 +1,12 @@
-﻿<div class="glyphicon glyphicon-cloud yellow" *ngIf="selector==2">
-    {{quotas.quota_remaining}}/{{quotas.quota_max}}
-</div>
-<div class="glyphicon glyphicon-cog green" *ngIf="selector==1">
-    {{quotas.quota_remaining}}/{{quotas.quota_max}}
-</div>
-<div class="glyphicon glyphicon-tint red" *ngIf="selector==3">
-    {{quotas.quota_remaining}}/{{quotas.quota_max}}
+﻿<div [ngSwitch]="selector">
+
+    <div class="glyphicon glyphicon-cloud yellow" *ngSwitchCase="2">
+        {{quotas.quota_remaining}}/{{quotas.quota_max}}
+    </div>
+    <div class="glyphicon glyphicon-cog green" *ngSwitchCase="1">
+        {{quotas.quota_remaining}}/{{quotas.quota_max}}
+    </div>
+    <div class="glyphicon glyphicon-tint red" *ngSwitchCase="3">
+        {{quotas.quota_remaining}}/{{quotas.quota_max}}
+    </div>
 </div>

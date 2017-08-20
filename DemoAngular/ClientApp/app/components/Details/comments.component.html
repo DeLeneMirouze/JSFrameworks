@@ -5,7 +5,7 @@
         <div class="user">
             <img class="gravatar" [src]='comment.owner.profile_image' [title]="comment.name" />
             <div class="other">
-                <div class="date">{{comment.creation_date | epochToDate:'dd/MM/yyyy'}}</div>
+                <div class="date">{{comment.creation_date | epochToDate}}</div>
                 <div class="name">{{comment.owner.display_name}}</div>
                 <div class="badge">{{comment.owner.reputation}}</div>
             </div>
