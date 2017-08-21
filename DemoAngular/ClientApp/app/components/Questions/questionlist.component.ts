@@ -27,6 +27,7 @@ export class QuestionListComponent implements OnInit {
         // FDLM: 
         // https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 
+        this.errorMessage = null;
         this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;

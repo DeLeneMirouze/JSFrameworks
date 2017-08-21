@@ -1,12 +1,12 @@
 ﻿
 import { NgModule } from "@angular/core";
-import { Comments } from './components/details/comments.component';
-import { Answers } from './components/details/answers.component';
+import { CommentsComponent } from './components/details/comments.component';
+import { AnswersComponent } from './components/details/answers.component';
 import { QuestionListComponent } from './components/Questions/questionlist.component';
 import { FilterListComponent } from './components/Questions/filter/filter.component';
 import { EpochToDatePipe } from './components/Shared/Pipes/EpochToDate.pipe';
 import { EscapeHtmlPipe } from './components/Shared/Pipes/keephtml.pipe';
-import { QuestionDetail } from './components/Details/questiondetail.component';
+import { QuestionDetailComponent } from './components/Details/questiondetail.component';
 import { RouterModule } from "@angular/router";
 import { QuestionGardService } from "./components/Shared/navmenu/questiongard.service";
 import { QuestionService } from "./components/Questions/question.service";
@@ -20,18 +20,18 @@ import { SharedModule } from './components/shared/shared.module';
             SharedModule,
             RouterModule.forChild([
                 { path: 'questions', component: QuestionListComponent },
-                { path: 'questions/:id', canActivate: [QuestionGardService], component: QuestionDetail }
+                { path: 'questions/:id', canActivate: [QuestionGardService], component: QuestionDetailComponent }
             ]
             )
         ],
         declarations: [
-            Comments,
-            Answers,
+            CommentsComponent,
+            AnswersComponent,
             QuestionListComponent,
             FilterListComponent,
             EpochToDatePipe,
             EscapeHtmlPipe,
-            QuestionDetail
+            QuestionDetailComponent
         ],
         providers: [
             QuestionGardService,

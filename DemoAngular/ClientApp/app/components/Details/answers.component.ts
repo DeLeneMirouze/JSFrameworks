@@ -9,6 +9,6 @@ import { IAnswer } from "../Domain/Answer";
         templateUrl: "./answers.component.html"
     }
 )
-export class Answers {
+export class AnswersComponent {
    @Input() answers: IAnswer[];
 }

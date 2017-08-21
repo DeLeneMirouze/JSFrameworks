@@ -13,7 +13,7 @@ import { IAnswer } from "../Domain/Answer";
         , styleUrls: ['./questiondetail.component.css']
     }
 )
-export class QuestionDetail implements OnInit {
+export class QuestionDetailComponent implements OnInit {
     constructor(private _route: ActivatedRoute, private _router: Router, private _questionService: QuestionService) {
 
     }

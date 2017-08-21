@@ -9,6 +9,6 @@ import { IComment } from "../Domain/Comment";
         templateUrl:"./comments.component.html"
     }
 )
-export class Comments {
+export class CommentsComponent {
     @Input() comments:[IComment]
 }
