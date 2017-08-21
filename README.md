@@ -10,6 +10,9 @@ Lancer depuis la ligne de commande:
 
 *webpack*
 
+
+Le site peut être lancé depuis Node (port 5000) ou depuis IIS.
+
 ## Outils de dev
 Le projet est un projet ASP.Net Core 1.x développé avec Visual Studio 2017.
 
