@@ -1,21 +1,21 @@
 # JSFrameworks
 POC pour tester quelques frameworks JavaScript
 
-**Construction du projet**
+## Construction du projet
 Lancer depuis la ligne de commande:
 
-##dotnet restore
+## dotnet restore
 *webpack --config webpack.config.vendor.js*
 *webpack*
 
-##Outils de dev
+## Outils de dev
 Le projet est un projet ASP.Net Core 1.x développé avec Visual Studio 2017
 Il utilise le SPA Template Angular:
 
 [Template SPA](https://github.com/kriasoft/AngularJS-SPA-Template)
 
 
-##Contenu
+## Contenu
 Pour l'instant seule une démonstration d'Angular 4.3.5.
 
 L'application montée requête StackOverflow en utilisant certaines fonctionalités de son Api REST. Je n'ai pas cherché à faire un site
@@ -23,7 +23,7 @@ aussi complet que Stackoverflow, par exemple les requêtes ne remontent que 10 �
 
 On peut tout de même faire une recherche, trier et regarder le détail d'une question avec affichage des commentaires et des réponses.
 
-##Fonctionalités Angular
+## Fonctionalités Angular
 
 * Fonctionalités de base (composant, module, TypeScript...)
 * module partagé
