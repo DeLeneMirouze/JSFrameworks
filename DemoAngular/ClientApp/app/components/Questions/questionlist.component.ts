@@ -12,7 +12,6 @@ import { IQuota } from "../Domain/Quota";
 export class QuestionListComponent implements OnInit {
     constructor(private _questionService: QuestionService)
     {
-
     }
 
     ngOnInit(): void {
@@ -27,14 +26,20 @@ export class QuestionListComponent implements OnInit {
         // FDLM: 
         // https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 
+        this.loading = true;
+
         this.errorMessage = null;
         this._questionService.getQuestionsHttp(filter, sortBy)
             .subscribe(vm => {
                 this.questions = vm.questions;
 
-                this.quotas= vm.quota;
+                this.quotas = vm.quota;
+                this.loading = false;
             }
-            , error => this.errorMessage = <any>error
+            , error => {
+                this.errorMessage = <any>error;
+                this.loading = false;
+            }
             );
     }
 
@@ -43,6 +48,7 @@ export class QuestionListComponent implements OnInit {
     errorMessage: string;
     questions: IQuestion[];
     quotas: IQuota;
+    loading: boolean;
 
     _sortFilter: string;
     get sortFilter(): string {

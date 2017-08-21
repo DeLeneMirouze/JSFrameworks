@@ -1,19 +1,22 @@
-﻿<header [quotas]="quotas"></header>
+﻿<div *ngIf="questions && questions.length">
+    <header [quotas]="quotas"></header>
 
-<filter (filterRequested)="onFilterRequested($event)"></filter>
+    <filter (filterRequested)="onFilterRequested($event)"></filter>
 
-Trier par: <select [(ngModel)]="sortFilter">
-    <option></option>
-    <option value="relevance">Pertinance</option>
-    <option value="activity">Activité</option>
-    <option value="votes">Votes</option>
-</select>
+    Trier par: <select [(ngModel)]="sortFilter">
+        <option></option>
+        <option value="relevance">Pertinance</option>
+        <option value="activity">Activité</option>
+        <option value="votes">Votes</option>
+    </select>
 
-<input type="checkbox" (change)="ToggleView()" /> Vue simplifiée
-
+    <input type="checkbox" (change)="ToggleView()" /> Vue simplifiée
+</div>
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
 
 <h1 class="pageTitle">{{pageTitle}}</h1>
+
+<div *ngIf="loading" class="loader"></div>
 
 <div *ngIf="questions && questions.length">
     <div class="question" *ngFor="let question of questions">

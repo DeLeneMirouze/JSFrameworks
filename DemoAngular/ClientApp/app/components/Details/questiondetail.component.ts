@@ -28,19 +28,27 @@ export class QuestionDetailComponent implements OnInit {
     quotas: IQuota;
     answers: IAnswer[];
     errorMessage: string;
+    loading: boolean;
 
     // lance une requête au service web API
     private request(id:number): void {
         // FDLM: 
         // https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 
+        this.loading = true;
+
         this._questionService.getQuestionById(id)
             .subscribe(vm => {
                 this.question = vm.question;
                 this.answers = vm.answers;
                 this.quotas = vm.quota;
+
+                this.loading = false;
             }
-            , error => this.errorMessage = <any>error
+            , error => {
+                this.errorMessage = <any>error;
+                this.loading = false;
+            }
             );
     }
 

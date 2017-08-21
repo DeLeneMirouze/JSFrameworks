@@ -3,6 +3,8 @@
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
 
 <button (click)="callBack()"><< Retour</button>
+
+<div *ngIf="loading" class="loader"></div>
 <div *ngIf="question" class="question">
 
     <h2>{{question.title}}</h2>
