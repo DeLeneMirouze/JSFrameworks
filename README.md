@@ -1,3 +1,4 @@
+
 # JSFrameworks
 POC pour tester quelques frameworks JavaScript
 
@@ -5,7 +6,9 @@ POC pour tester quelques frameworks JavaScript
 Lancer depuis la ligne de commande:
 
 *dotnet restore*
+
 *webpack --config webpack.config.vendor.js*
+
 *webpack*
 
 ## Outils de dev
@@ -19,7 +22,7 @@ Il utilise le SPA Template Angular:
 Pour l'instant seule une démonstration d'Angular 4.3.5.
 
 L'application montée requête StackOverflow en utilisant certaines fonctionalités de son Api REST. Je n'ai pas cherché à faire un site
-aussi complet que Stackoverflow, par exemple les requêtes ne remontent que 10 éléments et ne propose pas de pagination.
+aussi complet que **Stackoverflow**, par exemple les requêtes ne remontent que 10 éléments et ne propose pas de pagination.
 
 On peut tout de même faire une recherche, trier et regarder le détail d'une question avec affichage des commentaires et des réponses.
 
