@@ -13,8 +13,6 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { sharedConfig } from './app.module.shared';
-// FDLM on charge ici la configuration commune à tous les environnements d'exécution
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
     bootstrap: sharedConfig.bootstrap,
@@ -22,7 +20,6 @@ import { FormsModule } from '@angular/forms';
     providers: [...sharedConfig.providers],
     imports: [
         ServerModule,
-        FormsModule,
         ...sharedConfig.imports
     ]
 })

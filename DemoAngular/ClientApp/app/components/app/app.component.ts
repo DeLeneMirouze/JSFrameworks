@@ -9,13 +9,12 @@
 // par convention également, on appelle 'AppComponent' la classe du composant Root
 
 import { Component, VERSION } from '@angular/core';
-import { QuestionService } from "../Questions/question.service";
 
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [QuestionService]
+    providers: []
 })
 export class AppComponent {
     constructor() {

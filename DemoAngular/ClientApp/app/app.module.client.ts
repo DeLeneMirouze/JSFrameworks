@@ -12,7 +12,6 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // FDLM on charge ici la configuration commune à tous les environnements d'exécution
 import { sharedConfig } from './app.module.shared';
@@ -22,7 +21,6 @@ import { sharedConfig } from './app.module.shared';
     declarations: sharedConfig.declarations,
     imports: [
         BrowserModule,
-        FormsModule,
         HttpModule,
         ...sharedConfig.imports
     ],
