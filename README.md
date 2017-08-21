@@ -4,7 +4,7 @@ POC pour tester quelques frameworks JavaScript
 ## Construction du projet
 Lancer depuis la ligne de commande:
 
-## dotnet restore
+*dotnet restore*
 *webpack --config webpack.config.vendor.js*
 *webpack*
 
