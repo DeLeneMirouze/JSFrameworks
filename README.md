@@ -1,3 +1,4 @@
+
 # JSFrameworks
 POC pour tester quelques frameworks JavaScript
 
@@ -44,3 +45,4 @@ La structure des CSS serait certainement à revoir. Mais j'ai essayé de mettre 
 * Directives personalisées
 * Les différents modèles de binding
 * @Input, @Output, événements
+* Injection de dépendances
