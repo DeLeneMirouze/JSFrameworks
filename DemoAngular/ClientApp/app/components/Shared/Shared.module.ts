@@ -1,6 +1,6 @@
 ﻿
 import { NgModule } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "./header/Header.component";
 
@@ -8,6 +8,7 @@ import { HeaderComponent } from "./header/Header.component";
 @NgModule({
     imports: [
         CommonModule
+
     ],
     declarations: [
         HeaderComponent
@@ -16,7 +17,8 @@ import { HeaderComponent } from "./header/Header.component";
     exports: [
         CommonModule,
         FormsModule,
-        HeaderComponent
+        HeaderComponent,
+        JsonPipe
     ]
 })
 export class SharedModule {
