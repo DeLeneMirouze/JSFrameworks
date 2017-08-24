@@ -1,8 +1,32 @@
-﻿<div class="filter">
-	<input class="form-control" type="text" placeholder="Titre" [(ngModel)]="filter.title"/>
-	<!--<input type="datetime" placeholder="Depuis"/>
-	<input type="datetime" placeholder="Jusqu'à" />-->
+﻿<form 
+      #form="ngForm" 
+      (submit)="search(form)"
+      class="filter" 
+      novalidate>
 
-	<button class="btn btn-primary" (click)='search()'>Rechercher</button>
-</div>
+        <input class="form-control"
+               type="text"
+               placeholder="Votre recherche"
+               autocomplete="off"
+               name="title"
+               required  
+               [(ngModel)]="filter.title"
+    />
+	<button 
+            [disabled]="form.invalid" 
+            type="submit"
+            class="btn btn-primary" 
+            >Rechercher</button>
+</form>
+
+    Trier par: <select [(ngModel)]="sortFilter" class="form-control">
+    <option></option>
+    <option value="relevance">Pertinance</option>
+    <option value="activity">Activité</option>
+    <option value="votes">Votes</option>
+</select>
+
+<div *ngIf="loading" class="loader"></div>
+<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
 

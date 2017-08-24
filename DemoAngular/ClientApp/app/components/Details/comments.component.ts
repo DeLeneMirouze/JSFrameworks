@@ -10,5 +10,6 @@ import { IComment } from "../Domain/Comment";
     }
 )
 export class CommentsComponent {
+    // FDLM @Input rend cette propriété accessible depuis le composant parent
     @Input() comments:[IComment]
 }

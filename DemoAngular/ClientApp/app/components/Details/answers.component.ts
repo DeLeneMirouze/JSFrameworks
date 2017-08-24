@@ -10,5 +10,6 @@ import { IAnswer } from "../Domain/Answer";
     }
 )
 export class AnswersComponent {
+    // FDLM @Input rend cette propriété accessible depuis le composant parent
    @Input() answers: IAnswer[];
 }
