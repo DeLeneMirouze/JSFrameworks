@@ -1,6 +1,7 @@
 ﻿<form 
       #form="ngForm" 
       (submit)="search(form)"
+      [class.has-error]="title.invalid && title.touched"
       class="filter" 
       novalidate>
 
@@ -11,7 +12,10 @@
                name="title"
                required  
                [(ngModel)]="filter.title"
+               #title="ngModel"
     />
+    <div class="alert alert-danger" *ngIf="title.invalid && title.touched">Vous devez obligatoirement saisir un terme de recherche</div>
+
 	<button 
             [disabled]="form.invalid" 
             type="submit"
@@ -29,5 +33,5 @@ Trier par:
 
 <div *ngIf="loading" class="loader"></div>
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
-{{loading}}
+
 
