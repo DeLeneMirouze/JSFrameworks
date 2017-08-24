@@ -26,7 +26,14 @@ export class FilterListComponent implements OnInit {
     search(form: NgForm) {
         //FDLM on pourrait aussi lire form.value puisque le modèle et Angular sont synchronisés
         // grâce au double binding
-        this.request(this.filter, this.sortFilter);
+
+        if (this.filter.title) {
+            this.request(this.filter, this.sortFilter);
+        }
+        else
+        {
+            this.errorMessage = "Vous devez obligatoirement saisir un terme de recherche";
+        }
     }
 
     errorMessage: string;
