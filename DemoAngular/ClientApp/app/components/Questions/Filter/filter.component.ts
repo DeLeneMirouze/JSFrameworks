@@ -11,7 +11,7 @@ import { IQuestionViewModel } from "../QuestionsViewModel";
 export class FilterListComponent implements OnInit {
     constructor(private _questionService: QuestionService)
     {
-
+        this.loading = true;
     }
 
     ngOnInit(): void {
@@ -24,7 +24,8 @@ export class FilterListComponent implements OnInit {
     @Output() filterRequested: EventEmitter<IQuestionViewModel> = new EventEmitter<IQuestionViewModel>();
 
     search(form: NgForm) {
-        this.filter = form.value;
+        //FDLM on pourrait aussi lire form.value puisque le modèle et Angular sont synchronisés
+        // grâce au double binding
         this.request(this.filter, this.sortFilter);
     }
 

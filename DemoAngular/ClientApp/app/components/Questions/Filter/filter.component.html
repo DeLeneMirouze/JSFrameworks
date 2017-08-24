@@ -19,7 +19,8 @@
             >Rechercher</button>
 </form>
 
-    Trier par: <select [(ngModel)]="sortFilter" class="form-control">
+Trier par: 
+<select [(ngModel)]="sortFilter" class="form-control">
     <option></option>
     <option value="relevance">Pertinance</option>
     <option value="activity">Activité</option>
@@ -28,5 +29,5 @@
 
 <div *ngIf="loading" class="loader"></div>
 <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
-
+{{loading}}
 
