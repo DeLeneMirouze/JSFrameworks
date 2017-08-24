@@ -46,3 +46,5 @@ La structure des CSS serait certainement à revoir. Mais j'ai essayé de mettre 
 * Les différents modèles de binding
 * @Input, @Output, événements
 * Injection de dépendances
+* submit/POST
+* Validation formulaire
