@@ -10,7 +10,6 @@
     <h2>{{question.title}}</h2>
 
     <div class="quotas">
-        <div class="badge">Rép: {{question.answer_count}}</div>
         <div *ngIf="question.score" class="badge">Votes: {{question.score}}</div>
         <div class="badge">Vu: {{question.view_count}}</div>
     </div>
