@@ -34,7 +34,7 @@ La structure des CSS serait certainement à revoir. Mais j'ai essayé de mettre 
 
 ## Fonctionalités Angular
 
-* Fonctionalités de base (composant, module, TypeScript...)
+* Fonctionalités de base (service, composant, module, TypeScript...)
 * module partagé
 * Feature Module
 * Routage
