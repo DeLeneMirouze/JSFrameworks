@@ -19,7 +19,7 @@ Le projet est un projet ASP.Net Core 1.x développé avec Visual Studio 2017.
 
 Il utilise le **SPA Template Angular**:
 
-[Template SPA](https://github.com/kriasoft/AngularJS-SPA-Template)
+[Template SPA](https://github.com/aspnet/JavaScriptServices)
 
 
 ## Contenu
